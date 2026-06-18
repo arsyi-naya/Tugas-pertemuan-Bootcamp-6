@@ -1,6 +1,14 @@
-const app = require('./app.js');
-const PORT = process.env.PORT || 8080; 
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("API jalan");
+});
 
 app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server Manajemen Buku berjalan di port ${PORT}`);
+  console.log("Server jalan di port " + PORT);
 });
